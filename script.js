@@ -38,8 +38,8 @@ async function buscar() {
     return;
   }
 
-  const url = `http://26.87.3.24:3100/api/relatorio?sistema=${sistemaSelecionado}&data=${data}`;
-  // const url = `/api/relatorio?sistema=${sistemaSelecionado}&data=${data}`;
+  // const url = `http://26.87.3.24:3100/api/relatorio?sistema=${sistemaSelecionado}&data=${data}`;
+  const url = `/api/relatorio?sistema=${sistemaSelecionado}&data=${data}`;
 
   console.log("[LOG] Iniciando requisição para:", url);
 
