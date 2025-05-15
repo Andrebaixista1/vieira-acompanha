@@ -1,4 +1,3 @@
-// api/relatorio.js
 import fetch from "node-fetch";
 
 export default async function handler(req, res) {
@@ -10,9 +9,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Chama a API externa HTTP real
     const apiUrl = `http://26.87.3.24:3100/api/relatorio?sistema=${encodeURIComponent(sistema)}&data=${encodeURIComponent(data)}`;
-
     const response = await fetch(apiUrl);
 
     if (!response.ok) {
@@ -21,7 +18,6 @@ export default async function handler(req, res) {
       return;
     }
 
-    // Repasse os dados do arquivo para o front
     const buffer = await response.arrayBuffer();
 
     res.setHeader("Content-Type", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
